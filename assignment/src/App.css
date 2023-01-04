@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+.page {
+  max-width: 1200px;
+  min-width: 800px;
+  margin: auto;
+}
+.header {
+  font-size: 17px;
+  color: rgb(78, 78, 78);
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px auto 10px auto;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+.cardbody {
+  display: flex;
+  flex-direction: row;
+}
+.addBoxcontents {
+  color: rgb(71, 71, 71);
+  margin-top: 25px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+.btns {
+  margin-right: 15px;
+  height: 30px;
+  width: 70px;
+  background-color: transparent;
+  border-radius: 50px;
+  border: 2px solid rgb(0, 143, 150);
+  color: rgb(0, 143, 150);
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: bisque;
+}
+.mintbutton {
+  background-color: transparent;
+  border-radius: 50px;
+  border: 2px solid gray;
+  color: rgb(0, 143, 150);
+  font-weight: bold;
+  background-color: rgb(0, 143, 150);
+  border-radius: 15px;
+  color: white;
+  height: 30px;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+.addBox {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  background-color: rgb(231, 231, 231);
+  height: 80px;
+  border-radius: 10px;
+}
+.showingbox {
+  border: 2px solid rgb(0, 143, 150);
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 10px 20px 10px;
+}
+.closeDetail {
+  background-color: transparent;
+  border-radius: 50px;
+  border: 2px solid rgb(0, 143, 150);
+  color: rgb(0, 143, 150);
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: bisque;
+  width: 70px;
+  height: 40px;
+}
+.container {
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  height: 800px;
+  width: 80%;
+  padding: 30px;
+}
