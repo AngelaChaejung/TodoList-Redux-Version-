@@ -1,21 +1,29 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import "../App.css";
 import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
 // import todo from "./Home.jsx";
-import { useDispatch, useSelector } from "react-redux";
-import { getTodoByID } from "../redux/modules/todos";
-import { useState } from "react";
-const DetailPage = () => {
-  const dispatch = useDispatch();
-  const todo = useSelector((state) => state.todos.todo);
-  const { id } = useParams();
+import { useSelector } from "react-redux";
+// import { getTodoByID } from "../redux/modules/todos";
+// import { Navigate } from "react-router-dom";
 
-  useEffect(() => {
-    dispatch(getTodoByID(Number(id)));
-  }, [dispatch, id]);
+const DetailPage = () => {
+  // const dispatch = useDispatch();
+  const todo = useSelector((state) => state.todos.todoList);
+  // const { id } = useParams();
+  const params = useParams();
+  // console.log("Param : ", params);
+  // console.log(Array.isarray(todo));
+  console.log(todo);
+  const todoget = todo.find((todo) => todo.id === parseInt(params.id));
+
+  // console.log(params.id);
+  // useEffect(() => {
+  //   dispatch(getTodoByID(Number(id)));
+  // }, [dispatch, id]);
+  // console.log(todo);
   const a = () => {
-    const done = todo.isComplete;
+    const done = todoget.isComplete;
     if (done === true) {
       return "완료했지롱!!!!🙆‍♀️";
     } else {
@@ -26,8 +34,8 @@ const DetailPage = () => {
     <StContainer>
       <div>
         <StContentBox>
-          Number{todo?.id}.<StTitle> {todo.title}</StTitle>
-          <StContent>{todo.content}</StContent>
+          Number{todoget.id}.<StTitle> {todoget.title}</StTitle>
+          <StContent>{todoget.content}</StContent>
           <hr />
           <Stjinhaeng>진행상황 : {a()}</Stjinhaeng>
           <hr />

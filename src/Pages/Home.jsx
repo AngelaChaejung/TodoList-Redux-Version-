@@ -17,10 +17,9 @@ const Home = () => {
 
   //유일한 고유값을 만들어 ID에 넣자
   const onAddTodo = () => {
-    const newID = Math.floor(Math.random() * 100);
-
+    // const newID = Math.floor(Math.random() * 100);
+    // console.log(newID());
     const todo = {
-      id: newID + 1,
       title: title,
       content: content,
       isComplete: false,
@@ -32,7 +31,7 @@ const Home = () => {
     dispatch(addTodo(todo));
   };
   const onDeleteTodo = (id) => {
-    // const _todos = todoList.filter((p) => p.id !== id);
+    const _todos = todoList.filter((p) => p.id !== id);
     dispatch(deleteTodo(id));
   };
 
@@ -74,9 +73,7 @@ const Home = () => {
               .map((todo) => {
                 return (
                   <div className="showingbox" key={todo.id}>
-                    <Link to={`/${todo.id}`} key={todo.id}>
-                      상세페이지로 숑!
-                    </Link>
+                    <Link to={`/DetailPage/${todo.id}`}>상세페이지로 숑!</Link>
                     <h2>{todo.title}</h2>
                     <div>{todo.content}</div>
                     <button
@@ -104,7 +101,7 @@ const Home = () => {
               .map((todo) => {
                 return (
                   <div className="showingbox" key={todo.id}>
-                    <Link to={`/${todo.id}`}>상세페이지로 숑! </Link>
+                    <Link to={`/DetailPage/${todo.id}`}>상세페이지로 숑! </Link>
                     <h2>{todo.title}</h2>
                     <div>{todo.content}</div>
                     <button
