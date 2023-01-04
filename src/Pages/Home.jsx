@@ -18,9 +18,9 @@ const Home = () => {
   //유일한 고유값을 만들어 ID에 넣자
   const onAddTodo = () => {
     const newID = Math.floor(Math.random() * 100);
-    // console.log(newID());
+
     const todo = {
-      id: Number(newID),
+      id: newID + 1,
       title: title,
       content: content,
       isComplete: false,
@@ -32,7 +32,7 @@ const Home = () => {
     dispatch(addTodo(todo));
   };
   const onDeleteTodo = (id) => {
-    const _todos = todoList.filter((p) => p.id !== id);
+    // const _todos = todoList.filter((p) => p.id !== id);
     dispatch(deleteTodo(id));
   };
 

@@ -45,7 +45,7 @@ const todos = (state = initialState, action) => {
   switch (action.type) {
     case DELETE_TODO:
       return {
-        todoList: [...state.todoList.filter((todo) => todo.id !== action.id)],
+        todoList: [...state.todoList.filter((p) => p.id !== action.id)],
       };
     case GET_TODO_BY_ID:
       return {

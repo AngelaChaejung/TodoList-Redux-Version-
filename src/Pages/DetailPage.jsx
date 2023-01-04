@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 // import todo from "./Home.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { getTodoByID } from "../redux/modules/todos";
-
+import { useState } from "react";
 const DetailPage = () => {
   const dispatch = useDispatch();
   const todo = useSelector((state) => state.todos.todo);
@@ -14,10 +14,9 @@ const DetailPage = () => {
   useEffect(() => {
     dispatch(getTodoByID(Number(id)));
   }, [dispatch, id]);
-  console.log(todo);
   const a = () => {
     const done = todo.isComplete;
-    if (todo.isComplete === true) {
+    if (done === true) {
       return "완료했지롱!!!!🙆‍♀️";
     } else {
       return "진행중~~~🤷";
@@ -27,7 +26,7 @@ const DetailPage = () => {
     <StContainer>
       <div>
         <StContentBox>
-          Number{todo.id}.<StTitle> {todo.title}</StTitle>
+          Number{todo?.id}.<StTitle> {todo.title}</StTitle>
           <StContent>{todo.content}</StContent>
           <hr />
           <Stjinhaeng>진행상황 : {a()}</Stjinhaeng>
